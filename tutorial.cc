@@ -10,6 +10,10 @@ public:
         std::cout << "Hello, World we are getting started!" << std::endl;
     }
 
+    void OnUnitCreated(const sc2::Unit* unit) final {
+        std::cout << "Unit created, tag:" << unit->tag << std::endl;
+    }
+
     virtual void OnStep() final {
         std::cout << Observation()->GetGameLoop() << std::endl;
 
