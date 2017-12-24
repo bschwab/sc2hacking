@@ -11,6 +11,7 @@ public:
     }
 
     void OnUnitCreated(const sc2::Unit* unit) final {
+        // When a unit is created, note it here
         std::cout << "Unit created, tag:" << unit->tag << std::endl;
     }
 
