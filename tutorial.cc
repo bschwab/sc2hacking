@@ -12,8 +12,11 @@ public:
 
     virtual void OnStep() final {
         std::cout << Observation()->GetGameLoop() << std::endl;
-    }
 
+        // Print out the amount of Minerals & Vespene that we have
+        std::cout << "Minerals: " << Observation()->GetMinerals() <<
+            " Vespene: " << Observation()->GetVespene() << std::endl;    
+    }
 };
 
 int main(int argc, char* argv[]) {
