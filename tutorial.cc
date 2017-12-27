@@ -22,6 +22,19 @@ public:
         std::cout << "Minerals: " << Observation()->GetMinerals() <<
             " Vespene: " << Observation()->GetVespene() << std::endl;    
     }
+
+    virtual void OnUnitIdle(const Unit* unit) final {
+        switch (unit->unit_type.ToType()) {
+            case UNIT_TYPEID::TERRAN_COMMANDCENTER: {
+                Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_SCV);
+                std::cout << "Creating unit at command center" << std::endl;
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
 };
 
 int main(int argc, char* argv[]) {
